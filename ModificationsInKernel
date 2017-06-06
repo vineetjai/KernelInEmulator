@@ -2,3 +2,7 @@ To change  kernel version details
 1. In make menuconfig step while doing compilation of kernel 
 2. In General setup  ---> , Local version - append to kernel release 
 3. type version-name which you want to use 
+
+Installing apk in Emulator :- "adb install path/to/apk"
+
+Pulling File From ADB:- "adb pull path/to/file"
