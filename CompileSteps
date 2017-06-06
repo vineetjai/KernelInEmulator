@@ -1,0 +1,23 @@
+ 
+KERNEL COMPILATION IN EMULATOR
+
+Create an Android virtual device via android avd from android studio. Here I use x86-64 image for API 24 (7.0 Nougat) and google Nexus 6. Don't forget to use a larger internal memory size when creating the virtual device. (The default is 200MB and I use 2000MB)
+
+1.git clone     https://android.googlesource.com/kernel/goldfish/ -b android-goldfish-3.18
+2.git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9
+3.cd goldfish
+4.export CROSS_COMPILE=x86_64-linux-android-
+5.export ARCH=x86_64
+6.export PATH=$PATH:/path/to/x86_64-linux-android-4.9/bin
+7.make x86_64_ranchu_defconfig
+8.make menuconfig  # enable overlayfs and namespaces support here
+9.make -j2
+
+
+RUNNING IN EMULATOR
+
+1.Go to the directory in which emulator run is present (/home/Android/Sdk/tools/)
+2.“Android list avd” will tell name of avd installed in system .
+3.In tools folder open terminal and type “ emulator -kernel /path/to/imagefile/present/in/boot/folder/ -avd avd-name” 
+ 
+ 
