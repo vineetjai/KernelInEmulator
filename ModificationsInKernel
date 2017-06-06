@@ -5,4 +5,4 @@ To change  kernel version details
 
 Installing apk in Emulator :- "adb install path/to/apk"
 
-Pulling File From ADB:- "adb pull path/to/file"
+Pulling File From ADB:- "adb pull path/to/file/in/emulator/"
